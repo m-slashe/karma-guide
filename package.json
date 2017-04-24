@@ -1,0 +1,26 @@
+{
+  "name": "seila5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma run"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular-ui-router": "^0.4.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-wiredep": "^3.0.1",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.6.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-spec-reporter": "0.0.31",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}
