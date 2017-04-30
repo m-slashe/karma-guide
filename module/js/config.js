@@ -1,16 +1,16 @@
-angular.module('module',['ui.router']);
-
-angular.module('module').config(config);
-
-function config($stateProvider,$urlRouterProvider) {
+function config($stateProvider, $urlRouterProvider) {
 
     $stateProvider
         .state('main',{
-            url: '/main',
+            url: '/',
             controller: 'MainCtrl',
-            templateUrl: 'module/template/main.html'
+            controllerAs: 'main',
+            templateUrl: 'template/main.html'
         });
 
-    $urlRouterProvider.otherwise('/main');
+    $urlRouterProvider.otherwise('/');
 
 }
+
+config.$inject = ['$stateProvider', '$urlRouterProvider'];
+export { config };

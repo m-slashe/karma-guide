@@ -1,21 +1,28 @@
-angular.module('module').controller('MainCtrl',MainCtrl);
+class MainCtrl{
 
-MainCtrl.$inject = ['$scope','$http'];
-function MainCtrl($scope, $http) {
+    constructor($scope, $http){
 
-    $scope.sendRequest = function () {
-        $http.get('/teste')
-            .success(function (data) {
-                $scope.data = data.foo;
-            })
-            .error(function () {
-                $scope.data = 'erro';
-            })
-    };
+        const main = this;
+        $scope.main = main;
+        main.$scope = $scope;
+        main.$http = $http;
+        main.teste = 5;
 
-    $scope.seila = function () {
-        $scope.clicado = 'clicado';
-    };
+        main.sendRequest = function(){
+            $http.get('/teste')
+                .then(function (response) {
+                    main.data = response.data;
+                })
+                .catch(function (err) {
+                    main.data = err.data;
+                })
+        };
 
-    $scope.teste = 5
+        main.seila = function(){
+            main.clicado = 'clicado';
+        }
+    }
+
 }
+MainCtrl.$inject = ['$scope', '$http'];
+export { MainCtrl };
